@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block title %}Bookstore Home{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center; margin: 30px 0 30px 0;"> Welcome to our bookstore home </h1>
+
+<div class="card background">
+  <img src="{% static 'bookstore/images/background.jpg' %}"
+       width="60px" height="450px"
+       class="card-img-top" style="margin-bottom: 35px;">
+</div>
+
+{% endblock %}
+

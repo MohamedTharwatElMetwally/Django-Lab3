@@ -1,0 +1,27 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}{{book.name}}{% endblock %}
+
+{% block content %}
+
+<h1 style="text-align: center; margin: 60px 0 60px 0;"> {{book.name}} </h1>
+
+<div class="allbooks" style="display: flex; flex-direction: column; align-items: center;  margin-bottom: 100px;">
+  <div class="card" style="width: 25rem; margin-bottom: 20px;">
+    <img class="card-img-top" src="{{book.image_url}}" width="100px" height="500px" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title" style="margin-bottom: 20px;">{{ book.name }}</h5>
+      <p class="card-text">Price: {{ book.price }}</p>
+      <p class="card-text">Author: {{ author }}</p>
+      <p class="card-text">No. of Pages: {{ book.pages }}</p>
+      <p class="card-text">Created At: {{ book.created_at }}</p>
+      <p class="card-text">Updated At: {{ book.updated_at }}</p>
+      <div>
+        <a href="{% url 'all_books' %}" class="btn btn-primary">Back</a>
+        <a href="{% url 'edit_book' book.id %}" class="btn btn-primary">Edit</a> 
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
